@@ -12,6 +12,7 @@ class Action:
     effect: List[Tuple[str]]
 
 def build_fact_table(fact_list: List[Tuple[str]], predicate: Tuple[str]) -> pd.DataFrame:
+    """Build a pandas DataFrame containing all facts in fact_list for a given predicate"""
     facts = [fact[1:] for fact in fact_list if fact[0] == predicate]
     assert np.allclose(list(map(len, facts)), len(facts[0]))
     columns = [f'v{i}' for i in range(len(facts[0]))]
@@ -19,11 +20,13 @@ def build_fact_table(fact_list: List[Tuple[str]], predicate: Tuple[str]) -> pd.D
     data.name = predicate
     return data
 
-def initialize_fact_tables(fact_list: List[Tuple[str]]):
+def initialize_fact_tables(fact_list: List[Tuple[str]]) -> Dict[str, pd.DataFrame]:
+    """Build a dictionary from predicate names to fact table DataFrame objects"""
     predicate_names = sorted(list(set([fact[0] for fact in fact_list])))
     return {name:build_fact_table(fact_list, name) for name in predicate_names}
 
-def join_preconditions(tables:Dict[str, pd.DataFrame], predicate_list:List[Tuple[str]]) -> pd.DataFrame:
+def join_tables_using_predicate_list(tables:Dict[str, pd.DataFrame], predicate_list:List[Tuple[str]]) -> pd.DataFrame:
+    """Relabel table columns according to predicate list, then join on any matching variable names"""
     remapped_tables = []
     for predicate in predicate_list:
         table_name, *params = predicate
@@ -39,14 +42,19 @@ def join_preconditions(tables:Dict[str, pd.DataFrame], predicate_list:List[Tuple
             result = result.join(table, how='cross')
     return result
 
-def select_effects(groundings_table:pd.DataFrame, predicate_list:Tuple[str]) -> Dict[str, pd.DataFrame]:
+def select_positive_groundings(groundings_table:pd.DataFrame, predicate_list:Tuple[str]) -> Dict[str, pd.DataFrame]:
+    """For each positive predicate in predicate_list, extract relevant cols from groundings_table"""
     results = {}
     for predicate in predicate_list:
+        if predicate[0] == 'not':
+            continue
         table_name, *parameters = predicate
+        # TODO: this overwrites if table_name appears twice in same predicate_list. it shouldn't!
         results[table_name] = groundings_table[parameters]
     return results
 
 def extend_fact_tables(tables: Dict[str, pd.DataFrame], updates: Dict[str, pd.DataFrame]) -> bool:
+    """Update tables with any new items in `updates`, and return whether new items were added."""
     did_extend = False
     for table_name, new_facts in updates.items():
         table = tables[table_name]
@@ -59,10 +67,11 @@ def extend_fact_tables(tables: Dict[str, pd.DataFrame], updates: Dict[str, pd.Da
         return did_extend
 
 def generate_next_fact_layer(tables: Dict[str, pd.DataFrame], actions: List[Action]) -> Dict[str, pd.DataFrame]:
+    """Apply each action to fact layer represented by `tables` and add any new (positive) facts"""
     did_extend = False
     for action in actions:
-        result = join_preconditions(tables, action.precondition)
-        updates = select_effects(result, action.effect)
+        result = join_tables_using_predicate_list(tables, action.precondition)
+        updates = select_positive_groundings(result, action.effect)
         did_extend = did_extend or extend_fact_tables(tables, updates)
     return did_extend
 
@@ -91,6 +100,7 @@ def main():
         ],
         effect = [
             ('at', 'x', 'z'),
+            ('not', ('at', 'x', 'y'))
         ],
     )
     a2 = Action(
@@ -104,9 +114,11 @@ def main():
         ],
         effect = [
             ('at', 'x', 'y'),
+            ('not', ('at', 'x', 'z'))
         ],
     )
-    actions = [a1, a2]
+    actions = [a1]
+    # actions = [a1, a2]
     tables = initialize_fact_tables(init_state)
     while generate_next_fact_layer(tables, actions):
         pass
