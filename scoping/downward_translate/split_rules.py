@@ -2,10 +2,10 @@
 # components" (where to conditions are related if they share a variabe) into
 # several rules, one for each connected component and one high-level rule.
 
-from oo_scoping.downward_translate.pddl_to_prolog import Rule, get_variables
-from oo_scoping.downward_translate import graph
-from oo_scoping.downward_translate import greedy_join
-from oo_scoping.downward_translate import pddl
+from scoping.downward_translate.pddl_to_prolog import Rule, get_variables
+from scoping.downward_translate import graph
+from scoping.downward_translate import greedy_join
+from scoping.downward_translate import pddl
 
 
 def get_connected_conditions(conditions):

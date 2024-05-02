@@ -1,11 +1,11 @@
 import re, copy, itertools, z3, time, sys, pprint
 from collections import OrderedDict
 from typing import List, Tuple, Dict, Iterable
-from oo_scoping.skill_classes import EffectTypePDDL, SkillPDDL
-from oo_scoping.utils import product_dict, nested_list_replace, get_atoms, get_all_objects, condition_str2objects
-from oo_scoping.scoping import scope
-from oo_scoping.action import Action
-from oo_scoping.PDDLz3 import PDDL_Parser_z3, compile_expression, str2expression, extract_typed_objects
+from scoping.skill_classes import EffectTypePDDL, SkillPDDL
+from scoping.utils import product_dict, nested_list_replace, get_atoms, get_all_objects, condition_str2objects
+from scoping.scoping import scope
+from scoping.action import Action
+from scoping.PDDLz3 import PDDL_Parser_z3, compile_expression, str2expression, extract_typed_objects
 pp = pprint.PrettyPrinter(indent=4)
 
 

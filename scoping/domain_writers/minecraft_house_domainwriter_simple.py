@@ -4,7 +4,7 @@ import math
 import operator as op
 from functools import reduce
 import copy
-from oo_scoping.domains.malmo_writer import make_malmo_domain
+from scoping.domains.malmo_writer import make_malmo_domain
 
 item_types = ["diamond-pickaxe"]
 

@@ -15,7 +15,7 @@ from itertools import chain, product
 from collections import OrderedDict
 import z3
 import copy
-from oo_scoping.utils import simplify_disjunction, flatten, get_unique_z3_vars
+from scoping.utils import simplify_disjunction, flatten, get_unique_z3_vars
 
 
 class EffectTypePDDL:  # EffectTypes are Immutable

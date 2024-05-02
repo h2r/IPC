@@ -3,7 +3,7 @@ from typing import Callable
 
 import z3
 
-from oo_scoping.utils import get_atoms
+from scoping.utils import get_atoms
 
 
 class TestGetAtomsBase(unittest.TestCase):

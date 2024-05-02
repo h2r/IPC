@@ -6,9 +6,9 @@ import re, copy
 import itertools
 import z3
 
-from oo_scoping.pddl_scoper import scope_pddl
-from oo_scoping.examples import domains_dir
-from oo_scoping.utils import make_dir
+from scoping.pddl_scoper import scope_pddl
+from scoping.examples import domains_dir
+from scoping.utils import make_dir
 
 
 def remove_objects(input_path, output_path, objects):

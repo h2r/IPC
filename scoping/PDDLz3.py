@@ -1,8 +1,8 @@
-from oo_scoping.PDDL import PDDL_Parser, Action
+from scoping.PDDL import PDDL_Parser, Action
 import z3, re
 from collections import OrderedDict
-from oo_scoping.skill_classes import EffectTypePDDL, SkillPDDL
-from oo_scoping.utils import (
+from scoping.skill_classes import EffectTypePDDL, SkillPDDL
+from scoping.utils import (
     product_dict,
     nested_list_replace,
     get_atoms,

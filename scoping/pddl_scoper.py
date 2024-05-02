@@ -1,12 +1,12 @@
-from oo_scoping.utils import get_atoms, get_unique_z3_vars, pvars2objects
-from oo_scoping.writeback_pddl import (
+from scoping.utils import get_atoms, get_unique_z3_vars, pvars2objects
+from scoping.writeback_pddl import (
     get_scoped_domain_path,
     get_scoped_problem_path,
     writeback_problem,
     writeback_domain,
 )
-from oo_scoping.scoping import scope
-from oo_scoping.PDDLz3 import PDDL_Parser_z3
+from scoping.scoping import scope
+from scoping.PDDLz3 import PDDL_Parser_z3
 import argparse
 
 

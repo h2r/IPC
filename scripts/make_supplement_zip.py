@@ -6,7 +6,7 @@ import os
 
 
 
-ign_pats = [".git*",".gitignore", "oo_scoping.egg-info/*", ".vscode", ".ds_store", "ignore*", "ubuntu_scripts_new_planutils/*"]
+ign_pats = [".git*",".gitignore", "scoping.egg-info/*", ".vscode", ".ds_store", "ignore*", "ubuntu_scripts_new_planutils/*"]
 repo_root = os.path.dirname(__file__)
 repo_parent = os.path.dirname(repo_root)
 tgt_dir = os.path.join(repo_parent, "scoping_supplement")

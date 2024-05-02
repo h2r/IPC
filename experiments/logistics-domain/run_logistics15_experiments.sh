@@ -15,7 +15,7 @@ until [ $COUNTER -lt 1 ]; do
     # This exec is redirecting file descriptor 3 to  standard out and 4 to standard error
     exec 3>&1 4>&2
     # This will print out only the time of this command. We do this because otherwise, stdout gets full of other information, making it hard to find time
-    foo=$( { time python oo_scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/logistics00/domain.pddl examples/IPC_domains_propositional/logistics00/prob15.pddl --sas-file logistics15.sas 1>&3 2>&4; } 2>&1 )  # Captures time only.
+    foo=$( { time python scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/logistics00/domain.pddl examples/IPC_domains_propositional/logistics00/prob15.pddl --sas-file logistics15.sas 1>&3 2>&4; } 2>&1 )  # Captures time only.
     exec 3>&- 4>&-
     truntimes+=("$foo")
     let COUNTER-=1
@@ -27,7 +27,7 @@ let COUNTER=$user_arg+1
 until [ $COUNTER -lt 1 ]; do
     echo RUN_NUMBER $COUNTER
     exec 3>&1 4>&2
-    foo=$( { time python oo_scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/logistics00/domain.pddl examples/IPC_domains_propositional/logistics00/prob15.pddl --sas-file logistics15.sas --scope True 1>&3 2>&4; } 2>&1 )  # Captures time only.
+    foo=$( { time python scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/logistics00/domain.pddl examples/IPC_domains_propositional/logistics00/prob15.pddl --sas-file logistics15.sas --scope True 1>&3 2>&4; } 2>&1 )  # Captures time only.
     exec 3>&- 4>&-
     sruntimes+=("$foo")
     let COUNTER-=1

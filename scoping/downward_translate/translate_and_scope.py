@@ -22,27 +22,27 @@ from itertools import product
 import signal
 
 
-from oo_scoping.downward_translate import axiom_rules
-from oo_scoping.downward_translate import fact_groups
-from oo_scoping.downward_translate import instantiate
-from oo_scoping.downward_translate import normalize
-from oo_scoping.downward_translate import options
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import pddl_parser
-from oo_scoping.downward_translate import sas_tasks
-from oo_scoping import sas_parser
+from scoping.downward_translate import axiom_rules
+from scoping.downward_translate import fact_groups
+from scoping.downward_translate import instantiate
+from scoping.downward_translate import normalize
+from scoping.downward_translate import options
+from scoping.downward_translate import pddl
+from scoping.downward_translate import pddl_parser
+from scoping.downward_translate import sas_tasks
+from scoping import sas_parser
 
-from oo_scoping.downward_translate import simplify
-from oo_scoping.downward_translate import timers
-from oo_scoping.downward_translate import tools
-from oo_scoping.downward_translate import variable_order
+from scoping.downward_translate import simplify
+from scoping.downward_translate import timers
+from scoping.downward_translate import tools
+from scoping.downward_translate import variable_order
 
-from oo_scoping.downward_translate import scoping_sas_converter
-from oo_scoping.scoping import scope
-from oo_scoping.writeback_sas import writeback_scoped_sas
-from oo_scoping.utils import get_atoms
-from oo_scoping.skill_classes import SkillPDDL
-from oo_scoping.paths import (
+from scoping.downward_translate import scoping_sas_converter
+from scoping.scoping import scope
+from scoping.writeback_sas import writeback_scoped_sas
+from scoping.utils import get_atoms
+from scoping.skill_classes import SkillPDDL
+from scoping.paths import (
     get_effectively_relevant_fluents_file_path,
     get_scoped_file_path,
 )

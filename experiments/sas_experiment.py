@@ -26,7 +26,6 @@ def add_path_suffix(p, s):
 # Main function
 def run_experiment(n_runs, sas_file, fd_path, log_dir, plan_type: str, force_clear=False, run_id=None):
     tag = sas_file.split('/')[0] + "/" + sas_file.split('/')[1] + "/" + sas_file.split('/')[2][:-4]
-    sas_file = 'fdr-generator/benchmarks/' + sas_file
     log_dir = log_dir + "/fd/" + plan_type + "/" + tag
     start_time_exp = time.time()
 
@@ -222,7 +221,7 @@ def save_cmd_output(cmd_output, save_dir):
 
 
 def translate(domain, problem, sas_path):
-    cmd_pieces = ["python", f"{repo_root}/oo_scoping/downward_translate/translate_and_scope.py", domain, problem, "--sas-file", sas_path]
+    cmd_pieces = ["python", f"{repo_root}/scoping/downward_translate/translate_and_scope.py", domain, problem, "--sas-file", sas_path]
     print(' '.join(cmd_pieces))
     print()
     cmd_output = subprocess.run(cmd_pieces, capture_output=True, shell=False)
@@ -230,12 +229,12 @@ def translate(domain, problem, sas_path):
 
 
 def translate_and_scope(domain, problem, unscoped_sas_path):
-    cmd_pieces = ["python", f"{repo_root}/oo_scoping/downward_translate/translate_and_scope.py", domain, problem, "--sas-file", unscoped_sas_path, "--scope", "True"]
+    cmd_pieces = ["python", f"{repo_root}/scoping/downward_translate/translate_and_scope.py", domain, problem, "--sas-file", unscoped_sas_path, "--scope", "True"]
     cmd_output = subprocess.run(cmd_pieces, capture_output=True, shell=False)
     return cmd_output
 
 def just_scope(sas_path):
-    cmd_pieces = ["python", f"{repo_root}/oo_scoping/downward_translate/translate_and_scope.py", "--sas-file", sas_path, "--scope", "True", "--scope-only", "True"]
+    cmd_pieces = ["python", f"{repo_root}/scoping/downward_translate/translate_and_scope.py", "--sas-file", sas_path, "--scope", "True", "--scope-only", "True"]
     print(" ".join(cmd_pieces))
     cmd_output = subprocess.run(cmd_pieces, capture_output=True, shell=False)
     return cmd_output

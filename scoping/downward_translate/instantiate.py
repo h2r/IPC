@@ -3,10 +3,10 @@
 
 from collections import defaultdict
 
-from oo_scoping.downward_translate import build_model
-from oo_scoping.downward_translate import pddl_to_prolog
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import timers
+from scoping.downward_translate import build_model
+from scoping.downward_translate import pddl_to_prolog
+from scoping.downward_translate import pddl
+from scoping.downward_translate import timers
 
 
 def get_fluent_facts(task, model):

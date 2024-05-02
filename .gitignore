@@ -9,7 +9,7 @@ taxi_trace_bleh.txt
 __pycache__/
 .ipynb_checkpoints
 *.py[cod]
-oo_scoping.egg-info
+scoping.egg-info
 # *.sas
 sas_plan
 .txt

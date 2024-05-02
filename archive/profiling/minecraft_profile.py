@@ -5,9 +5,9 @@ import re, copy
 import time
 import pathlib
 
-from oo_scoping.pddl_scoper import scope_pddl
-from oo_scoping.examples import domains_dir
-from oo_scoping.utils import make_dir
+from scoping.pddl_scoper import scope_pddl
+from scoping.examples import domains_dir
+from scoping.utils import make_dir
 
 # For profiling
 import cProfile

@@ -1,6 +1,6 @@
 import z3
-from oo_scoping.skill_classes import EffectType, Skill
-from oo_scoping.utils import solver_implies_condition
+from scoping.skill_classes import EffectType, Skill
+from scoping.utils import solver_implies_condition
 import pdb
 from typing import List, NamedTuple
 

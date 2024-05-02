@@ -1,6 +1,6 @@
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import sccs
-from oo_scoping.downward_translate import timers
+from scoping.downward_translate import pddl
+from scoping.downward_translate import sccs
+from scoping.downward_translate import timers
 
 from collections import defaultdict
 

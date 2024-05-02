@@ -1,5 +1,5 @@
 """This script was used to get state var counts for PDDL domains for the IJCAI 2023 response."""
-from oo_scoping.PDDLz3 import PDDL_Parser
+from scoping.PDDLz3 import PDDL_Parser
 from dataclasses import dataclass
 from typing import List
 
@@ -23,7 +23,7 @@ def pddl_paths_to_state_variable_count(domain: str, problem: str) -> int:
 
 
 def get_ipc_composite_stat_var_counts() -> List[StateVarCount]:
-    ipc_dir = "oo_scoping/examples/domains/IPC_Domains/CompositeIPC"
+    ipc_dir = "scoping/examples/domains/IPC_Domains/CompositeIPC"
     ipc_composite_domain_path = f"{ipc_dir}/ipc_composite.pddl"
     ipc_names = {
         "depot": "prob-01",
@@ -70,7 +70,7 @@ def get_playroom_state_var_counts() -> List[StateVarCount]:
 
 
 def get_minecraft_state_var_counts() -> List[StateVarCount]:
-    dir = "oo_scoping/examples/domains/minecraft3/"
+    dir = "scoping/examples/domains/minecraft3/"
     unscoped_domain = f"{dir}/minecraft-contrived3.pddl"
     problem_names = ["make_wooden_planks", "get_dyed_wool", "make_bed"]
     counts = []

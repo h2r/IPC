@@ -4,17 +4,17 @@ from typing import List, Tuple, Dict, Iterable
 
 import z3, re
 
-from oo_scoping.skill_classes import EffectTypePDDL, SkillPDDL
-from oo_scoping.utils import (
+from scoping.skill_classes import EffectTypePDDL, SkillPDDL
+from scoping.utils import (
     product_dict,
     nested_list_replace,
     get_atoms,
     get_unique_z3_vars,
 )
-from oo_scoping.action import Action
-from oo_scoping.PDDLz3 import compile_expression
-from oo_scoping.PDDL import PDDL_Parser, Action
-from oo_scoping.downward_translate import sas_tasks
+from scoping.action import Action
+from scoping.PDDLz3 import compile_expression
+from scoping.PDDL import PDDL_Parser, Action
+from scoping.downward_translate import sas_tasks
 
 """
 General Notes on current implementation of SAS+ -> z3 for scoping purposes.
@@ -60,10 +60,10 @@ def make_str2var_dict(sas_vars: sas_tasks.SASVariables):
 
 def make_str_grounded_actions(sas_ops):
     """
-    Returns a list oo_scoping.action.Action variables
+    Returns a list scoping.action.Action variables
 
     :param sas_ops - a list of SASOperator objects corresponding to all the actions in this particular problem
-    Output - a non-nested list of oo_scoping.action.Action variables representing these operators
+    Output - a non-nested list of scoping.action.Action variables representing these operators
 
     TODO: Currently, we're not grouping the actions in any way (and it's unclear if we should), but this list
     might be a good place to do it if we wanted

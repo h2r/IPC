@@ -16,7 +16,7 @@ then
     until [ $COUNTER -lt 1 ]; do
         echo RUN_NUMBER $COUNTER
         exec 3>&1 4>&2
-        foo=$( { time python oo_scoping/scope_and_writeback_pddl.py --domain examples/multi_monkeys_playroom/multi_monkeys_playroom.pddl --prob examples/multi_monkeys_playroom/prob07.pddl 1>&3 2>&4; } 2>&1 )  # Captures time only.
+        foo=$( { time python scoping/scope_and_writeback_pddl.py --domain examples/multi_monkeys_playroom/multi_monkeys_playroom.pddl --prob examples/multi_monkeys_playroom/prob07.pddl 1>&3 2>&4; } 2>&1 )  # Captures time only.
         exec 3>&- 4>&-
         sruntimes+=("$foo")
         let COUNTER-=1

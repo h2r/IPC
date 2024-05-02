@@ -1,9 +1,9 @@
 from collections import defaultdict
 import itertools
 
-from oo_scoping.downward_translate import constraints
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import tools
+from scoping.downward_translate import constraints
+from scoping.downward_translate import pddl
+from scoping.downward_translate import tools
 
 # Notes:
 # All parts of an invariant always use all non-counted variables

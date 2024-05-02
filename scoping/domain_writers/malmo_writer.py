@@ -4,7 +4,7 @@ import math
 import operator as op
 from functools import reduce
 import copy
-from oo_scoping.examples import domains_dir
+from scoping.examples import domains_dir
 
 type_replacements = {
     "obsidian-block": "obsidian",

@@ -1,7 +1,7 @@
-from oo_scoping.downward_translate import invariant_finder
-from oo_scoping.downward_translate import options
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import timers
+from scoping.downward_translate import invariant_finder
+from scoping.downward_translate import options
+from scoping.downward_translate import pddl
+from scoping.downward_translate import timers
 
 
 DEBUG = False

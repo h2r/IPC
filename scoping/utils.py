@@ -9,7 +9,7 @@ import pdb
 import z3
 from typing import List
 
-# from oo_scoping.skill_classes import SkillPDDL
+# from scoping.skill_classes import SkillPDDL
 
 # TODO Split this into multiple scripts. Remove unneeded functions.
 

@@ -1,7 +1,7 @@
-from oo_scoping.downward_translate import options
+from scoping.downward_translate import options
 
-from oo_scoping.downward_translate.pddl_parser import lisp_parser
-from oo_scoping.downward_translate.pddl_parser import parsing_functions
+from scoping.downward_translate.pddl_parser import lisp_parser
+from scoping.downward_translate.pddl_parser import parsing_functions
 
 file_open = open
 

@@ -5,11 +5,11 @@ import re, copy
 import time
 import pathlib
 
-from oo_scoping.scoping import scope
-from oo_scoping.pddl_scoper import scope_pddl
-from oo_scoping.PDDLz3 import PDDL_Parser_z3
-from oo_scoping.examples import domains_dir
-from oo_scoping.utils import make_dir
+from scoping.scoping import scope
+from scoping.pddl_scoper import scope_pddl
+from scoping.PDDLz3 import PDDL_Parser_z3
+from scoping.examples import domains_dir
+from scoping.utils import make_dir
 
 # For profiling
 import cProfile

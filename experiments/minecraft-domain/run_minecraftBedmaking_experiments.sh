@@ -16,7 +16,7 @@ then
     until [ $COUNTER -lt 1 ]; do
         echo RUN_NUMBER $COUNTER
         exec 3>&1 4>&2
-        foo=$( { time python oo_scoping/scope_and_writeback_pddl.py --domain oo_scoping/examples/domains/minecraft3/minecraft-contrived3.pddl --prob oo_scoping/examples/domains/minecraft3/prob_make_bed_irrel.pddl 1>&3 2>&4; } 2>&1 )  # Captures time only.
+        foo=$( { time python scoping/scope_and_writeback_pddl.py --domain scoping/examples/domains/minecraft3/minecraft-contrived3.pddl --prob scoping/examples/domains/minecraft3/prob_make_bed_irrel.pddl 1>&3 2>&4; } 2>&1 )  # Captures time only.
         exec 3>&- 4>&-
         sruntimes+=("$foo")
         let COUNTER-=1
@@ -28,7 +28,7 @@ COUNTER="$user_arg + 1"
 until [ $COUNTER -lt 1 ]; do
     echo RUN_NUMBER $COUNTER
     exec 3>&1 4>&2
-    foo=$( { time enhsp-2020 -o oo_scoping/examples/domains/minecraft3/minecraft-contrived3.pddl -f oo_scoping/examples/domains/minecraft3/prob_make_bed_irrel.pddl -planner opt-hmax 1>&3 2>&4; } 2>&1 )  # Captures time only.
+    foo=$( { time enhsp-2020 -o scoping/examples/domains/minecraft3/minecraft-contrived3.pddl -f scoping/examples/domains/minecraft3/prob_make_bed_irrel.pddl -planner opt-hmax 1>&3 2>&4; } 2>&1 )  # Captures time only.
     exec 3>&- 4>&-
     enhsp_runtimes+=("$foo")
     let COUNTER-=1
@@ -39,7 +39,7 @@ COUNTER="$user_arg + 1"
 until [ $COUNTER -lt 1 ]; do
     echo RUN_NUMBER $COUNTER
     exec 3>&1 4>&2
-    foo=$( { time enhsp-2020 -o oo_scoping/examples/domains/minecraft3/minecraft-contrived3_scoped_prob_make_bed_irrel.pddl -f oo_scoping/examples/domains/minecraft3/prob_make_bed_irrel_scoped.pddl -planner opt-hmax 1>&3 2>&4; } 2>&1 )  # Captures time only.
+    foo=$( { time enhsp-2020 -o scoping/examples/domains/minecraft3/minecraft-contrived3_scoped_prob_make_bed_irrel.pddl -f scoping/examples/domains/minecraft3/prob_make_bed_irrel_scoped.pddl -planner opt-hmax 1>&3 2>&4; } 2>&1 )  # Captures time only.
     exec 3>&- 4>&-
     senhsp_runtimes+=("$foo")
     let COUNTER-=1

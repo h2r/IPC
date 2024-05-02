@@ -2,7 +2,7 @@
 
 import copy
 
-from oo_scoping.downward_translate import pddl
+from scoping.downward_translate import pddl
 
 
 class ConditionProxy:

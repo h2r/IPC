@@ -1,5 +1,5 @@
-from oo_scoping.downward_translate.pddl import axioms
-from oo_scoping.downward_translate.pddl import predicates
+from scoping.downward_translate.pddl import axioms
+from scoping.downward_translate.pddl import predicates
 
 
 class Task:

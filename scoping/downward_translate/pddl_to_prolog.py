@@ -3,9 +3,9 @@
 
 import itertools
 
-from oo_scoping.downward_translate import normalize
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import timers
+from scoping.downward_translate import normalize
+from scoping.downward_translate import pddl
+from scoping.downward_translate import timers
 
 
 class PrologProgram:
@@ -45,7 +45,7 @@ class PrologProgram:
 
     def split_rules(self):
         # MF: Why do we import it in this function, rather than at the top?
-        from oo_scoping.downward_translate import split_rules
+        from scoping.downward_translate import split_rules
 
         # Splits rules whose conditions can be partitioned in such a way that
         # the parts have disjoint variable sets, then split n-ary joins into

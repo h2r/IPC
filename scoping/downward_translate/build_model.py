@@ -4,8 +4,8 @@
 import sys
 import itertools
 
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import timers
+from scoping.downward_translate import pddl
+from scoping.downward_translate import timers
 from functools import reduce
 
 

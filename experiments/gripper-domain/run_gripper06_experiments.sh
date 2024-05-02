@@ -12,7 +12,7 @@ COUNTER="$user_arg + 1"
 until [ $COUNTER -lt 1 ]; do
     echo RUN_NUMBER $COUNTER
     exec 3>&1 4>&2
-    foo=$( { time python oo_scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/gripper/domain.pddl examples/IPC_domains_propositional/gripper/prob06.pddl --sas-file gripper06.sas 1>&3 2>&4; } 2>&1 )  # Captures time only.
+    foo=$( { time python scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/gripper/domain.pddl examples/IPC_domains_propositional/gripper/prob06.pddl --sas-file gripper06.sas 1>&3 2>&4; } 2>&1 )  # Captures time only.
     exec 3>&- 4>&-
     truntimes+=("$foo")
     let COUNTER-=1
@@ -23,7 +23,7 @@ COUNTER="$user_arg + 1"
 until [ $COUNTER -lt 1 ]; do
     echo RUN_NUMBER $COUNTER
     exec 3>&1 4>&2
-    foo=$( { time python oo_scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/gripper/domain.pddl examples/IPC_domains_propositional/gripper/prob06.pddl --sas-file gripper06.sas --scope True 1>&3 2>&4; } 2>&1 )  # Captures time only.
+    foo=$( { time python scoping/downward_translate/translate_and_scope.py examples/IPC_domains_propositional/gripper/domain.pddl examples/IPC_domains_propositional/gripper/prob06.pddl --sas-file gripper06.sas --scope True 1>&3 2>&4; } 2>&1 )  # Captures time only.
     exec 3>&- 4>&-
     sruntimes+=("$foo")
     let COUNTER-=1

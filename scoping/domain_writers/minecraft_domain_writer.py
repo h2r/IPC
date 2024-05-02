@@ -4,7 +4,7 @@ import math
 import operator as op
 from functools import reduce
 import copy
-from oo_scoping.domain_writers.malmo_writer import make_malmo_domain
+from scoping.domain_writers.malmo_writer import make_malmo_domain
 
 item_types = [
     "wool",

@@ -1,7 +1,7 @@
 import sys
 
-from oo_scoping.downward_translate import pddl
-from oo_scoping.downward_translate import pddl_to_prolog
+from scoping.downward_translate import pddl
+from scoping.downward_translate import pddl_to_prolog
 
 
 class OccurrencesTracker:

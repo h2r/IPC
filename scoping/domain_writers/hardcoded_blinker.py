@@ -1,5 +1,5 @@
 import z3
-from oo_scoping.skill_classes import EffectTypePDDL, SkillPDDL
+from scoping.skill_classes import EffectTypePDDL, SkillPDDL
 import pdb
 from typing import List
 from typing import NamedTuple

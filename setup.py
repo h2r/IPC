@@ -6,7 +6,7 @@ import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
 
-setup(name='oo_scoping',
+setup(name='scoping',
       version='1.0',
       description='Object-Oriented state abstraction',
       long_description=(here / 'README.md').read_text(encoding='utf-8'),

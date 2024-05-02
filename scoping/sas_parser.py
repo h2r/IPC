@@ -5,9 +5,9 @@ from typing import Dict, Tuple, List, Set, NewType, Optional, Iterable, TypeVar,
 import itertools
 
 import z3
-from oo_scoping.downward_translate import sas_tasks as fd
+from scoping.downward_translate import sas_tasks as fd
 
-from oo_scoping.skill_classes import SkillPDDL, EffectTypePDDL
+from scoping.skill_classes import SkillPDDL, EffectTypePDDL
 
 SasVarVal = NewType("SasVarVal", str)
 
@@ -525,7 +525,7 @@ def test():
     pth_sas_dir = f"{repo_root}/generated_sas"
     os.makedirs(pth_sas_dir, exist_ok=True)
     pth_sas_in = f"{pth_sas_dir}/gripper-painting.sas"
-    cmd_s = f"python {repo_root}/oo_scoping/downward_translate/translate_and_scope.py {repo_root}/examples/gripper-painting-domain/domain.pddl {repo_root}/examples/gripper-painting-domain/prob04.pddl --sas-file {pth_sas_in} --scope True"
+    cmd_s = f"python {repo_root}/scoping/downward_translate/translate_and_scope.py {repo_root}/examples/gripper-painting-domain/domain.pddl {repo_root}/examples/gripper-painting-domain/prob04.pddl --sas-file {pth_sas_in} --scope True"
     os.system(cmd_s)
 
     parser = SasParser(pth=pth_sas_in)

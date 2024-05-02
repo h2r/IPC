@@ -1,6 +1,6 @@
 # Downward Translate
 
-This code was copied from https://github.com/aibasel/downward/tree/main/src/translate and lightly modified to be used with the oo_scoping library. The main changes were:
+This code was copied from https://github.com/aibasel/downward/tree/main/src/translate and lightly modified to be used with the scoping library. The main changes were:
 
 1. Using absolute imports
 2. A few type hints

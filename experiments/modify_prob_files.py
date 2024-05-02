@@ -1,4 +1,4 @@
-from oo_scoping.PDDL import PDDL_Parser
+from scoping.PDDL import PDDL_Parser
 import argparse
 import itertools
 import os

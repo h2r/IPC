@@ -4,8 +4,8 @@ import math
 import operator as op
 from functools import reduce
 import copy
-from oo_scoping.domain_writers.malmo_writer import make_malmo_domain
-from oo_scoping.examples import domains_dir
+from scoping.domain_writers.malmo_writer import make_malmo_domain
+from scoping.examples import domains_dir
 
 item_types = ["diamond", "stick", "diamond-axe", "white-dye", "blue-dye", "red-dye"]
 destructible_item_types = ["orchid-flower", "daisy-flower", "red-tulip"]

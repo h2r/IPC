@@ -1,8 +1,8 @@
 from itertools import chain
 from typing import Iterable, Union, Optional, List, Tuple, Set
 import z3
-from oo_scoping.skill_classes import SkillPDDL, EffectTypePDDL, merge_skills_pddl
-from oo_scoping.utils import (
+from scoping.skill_classes import SkillPDDL, EffectTypePDDL, merge_skills_pddl
+from scoping.utils import (
     split_conj,
     get_atoms,
     solver_implies_condition,
@@ -11,7 +11,7 @@ from oo_scoping.utils import (
     pvars2objects,
     
 )
-from oo_scoping.writeback_pddl import writeback_domain, writeback_problem
+from scoping.writeback_pddl import writeback_domain, writeback_problem
 
 
 def skills2effects(skills: List[SkillPDDL]) -> List[EffectTypePDDL]:

@@ -1,7 +1,7 @@
 import sys
 
-from oo_scoping.downward_translate import graph
-from oo_scoping.downward_translate import pddl
+from scoping.downward_translate import graph
+from scoping.downward_translate import pddl
 
 
 def parse_typed_list(

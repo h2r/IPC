@@ -1,7 +1,7 @@
 import os, time, argparse, subprocess, json, shutil, re
 import pandas as pd
 import numpy as np
-from oo_scoping.writeback_pddl import get_scoped_problem_path, get_scoped_domain_path
+from scoping.writeback_pddl import get_scoped_problem_path, get_scoped_domain_path
 
 root_dir = os.path.dirname(os.path.dirname(__file__))
 
@@ -179,7 +179,7 @@ def save_cmd_output(cmd_output, save_dir):
 
 
 def scope(domain, problem):
-    scope_script_pth =  f"{root_dir}/oo_scoping/scope_and_writeback_pddl.py"
+    scope_script_pth =  f"{root_dir}/scoping/scope_and_writeback_pddl.py"
     assert os.path.isfile(scope_script_pth)
     cmd_pieces =["python", scope_script_pth, "--domain", domain, "--prob", problem]
     cmd_output = subprocess.run(cmd_pieces, capture_output=True, shell=False)
