@@ -164,8 +164,8 @@ class SasParser:
         self.parse_mutex()
         self.parse_initial_state()
         self.parse_goal()
-        self.parse_axioms()
         self.parse_operators()
+        self.parse_axioms()
 
 
     def parse_version(self) -> str:
@@ -273,11 +273,10 @@ class SasParser:
             effect_lines = m.group("effects").splitlines()
             effects = tuple([self.parse_effect(x) for x in effect_lines])
             operators.append(SasOperator(
-                nm = m.group("nm"),
+                nm = "(" + m.group("nm") + ")",
                 prevail = prevail,
-                effects=effects,
-                cost=m.group("cost")
-
+                effects = effects,
+                cost = m.group("cost")
             ))
         if len(operators) != n_operators:
             raise ValueError(f"The sas file claims to have {n_operators} operators, but we found {len(operators)}")
